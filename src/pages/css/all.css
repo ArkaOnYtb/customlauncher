@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../../assets/font/opensans-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('../../assets/font/opensans-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+div {
+    font-family: 'open_sansregular';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 30px;
+}
+
+.centredX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.centredY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+div.titleBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-app-region: drag;
+}
+
+div.titleBar label.title {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+button.barBtn {
+    background-color: rgba(255, 0, 0, 0);
+    border-radius: 0%;
+    border: none;
+    transition: 0.3s;
+    position: absolute;
+    top: 0px;
+    width: 50px;
+    height: 30px;
+    -webkit-app-region: no-drag;
+}
+
+button.barBtn:hover {
+    background-color: rgba(255, 255, 255, 0.151);
+}
+
+button.closeBtn {
+    left: calc(100vw - 50px);
+}
+
+button.minimizeBtn {
+    left: calc(100vw - 100px);
+    display: none;
+}
+
+button.maximizeBtn {
+    left: calc(100vw - 100px);
+}
+
+button.reduceBtn {
+    left: calc(100vw - 150px);
+}
+
+button.closeBtn:hover {
+    background-color: rgba(255, 0, 0, 1);
+}

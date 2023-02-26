@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head lang="en">
+
+    <meta charset="utf-8">
+
+    <script type="text/javascript">
+
+        const { openBrowser } = require('../../scripts/utils.js')
+        const { ipcRenderer } = require('electron')
+
+        function loginMicrosoft() {
+            ipcRenderer.send('loginMicrosoft')
+        }
+
+        // title bar buttons functions
+        function closeWin() {ipcRenderer.invoke('close')}
+        function reduce() {ipcRenderer.invoke('reduce')}
+
+        // change the resize button when the window size changes
+        ipcRenderer.on('maximized', () => {
+            document.getElementById('minimizeBtn').style.display = 'block'
+            document.getElementById('maximizeBtn').style.display = 'none'
+        })
+
+        ipcRenderer.on('minimized', () => {
+            document.getElementById('minimizeBtn').style.display = 'none'
+            document.getElementById('maximizeBtn').style.display = 'block'
+        })
+
+    </script>
+
+    <!--font awesome icons-->
+    <script src="https://kit.fontawesome.com/4d39c17254.js" crossorigin="anonymous"></script>
+    <link href="../css/login.css" rel="stylesheet">
+    <link href="../css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="titleBar" class="titleBar"">
+
+        <label id="title" class="title">Arka Launcher</label>
+
+        <button id="closeBtn" class="closeBtn barBtn" onclick="closeWin()">
+            <svg name="TitleBarClose" width="10" height="10" viewBox="0 0 12 12"><polygon stroke="#ffffff" fill="#ffffff" fill-rule="evenodd" points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1"></polygon></svg>
+        </button>
+
+        <button id="reduceBtn" class="reduceBtn barBtn" onclick="reduce()">
+            <svg name="TitleBarReduce" width="10" height="10" viewBox="0 0 12 12"><rect stroke="#ffffff" fill="#ffffff" width="10" height="1" x="1" y="6"></rect></svg>
+        </button>
+
+    </div>
+    
+    
+
+</body>
