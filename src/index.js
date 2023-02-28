@@ -1,5 +1,7 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
+const { loginMicrosoft } = require('./scripts/login.js')
+const fs = require('node:fs')
 let settings = require('./settings.json');
 
 let mainWindow
@@ -11,6 +13,7 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
+  console.log(settings)
 
   // calculs de la taille
   let page;
@@ -27,14 +30,20 @@ const createWindow = () => {
   height = Math.round(screen.getPrimaryDisplay().size.height * 3/4)
 
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: width,
+    height: height,
+    title: settings.title,
+    center: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation: false
     },
+    titleBarStyle: 'hidden',
+    resizable: false 
   });
-  mainWindow.loadFile(path.join(__dirname, 'pages/', page + ".html"));
-  mainWindow.webContents.openDevTools();
+  mainWindow.loadFile(path.join(__dirname, 'pages/html/', page + ".html"));
+  //mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', createWindow);
@@ -50,3 +59,48 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+function emit(name, args) {
+  mainWindow.webContents.send(name, args)
+}
+
+function writeJson() {
+  fs.writeFileSync('./src/settings.json', JSON.stringify(settings, null, 2), err => console.log(err))
+}
+
+ipcMain.handle('close', () => {
+  if(mainWindow.closable) {
+    mainWindow.close()
+  } else {
+    mainWindow.destroy()
+  }
+})
+
+ipcMain.handle('reduce', () => {
+  mainWindow.minimize()
+})
+
+ipcMain.handle('minimize', () => {
+  mainWindow.unmaximize()
+})
+
+ipcMain.handle('maximize', () => {
+  mainWindow.maximize()
+})
+
+ipcMain.on('dragged', (event) => {
+  event.reply('dragged', mainWindow.isFullscreen())
+})
+
+ipcMain.on('loginMicrosoft', async (event, args) => {
+   let login = await loginMicrosoft().then(res => {
+    if(res != 1) {
+      settings.account = res;
+      writeJson()
+    }
+  }).catch(err => console.log(err))
+})
+
+module.exports = {
+  emit: emit
+}
