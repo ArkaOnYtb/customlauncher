@@ -9,9 +9,15 @@
         const { openBrowser } = require('../../scripts/utils.js')
         const { ipcRenderer } = require('electron')
 
+        function loginMicrosoft() {
+            ipcRenderer.send('loginMicrosoft')
+        }
+
         // title bar buttons functions
         function closeWin() {ipcRenderer.invoke('close')}
         function reduce() {ipcRenderer.invoke('reduce')}
+        function minimize() {ipcRenderer.invoke('minimize')}
+        function maximize() {ipcRenderer.invoke('maximize')}
 
         // change the resize button when the window size changes
         ipcRenderer.on('maximized', () => {
@@ -28,39 +34,44 @@
 
     <!--font awesome icons-->
     <script src="https://kit.fontawesome.com/4d39c17254.js" crossorigin="anonymous"></script>
-    <link href="../css/login.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
     <link href="../css/all.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div id="titleBar" class="titleBar">
+    <div id="titleBar" class="titleBar"">
+
+        <label id="title" class="title">Arka Launcher</label>
 
         <button id="closeBtn" class="closeBtn barBtn" onclick="closeWin()">
-            <svg name="TitleBarClose" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
-                <line x1="11" y1="0" x2="0" y2="11" stroke="white"></line>
-                <line x1="0" y1="0" x2="11" y2="11" stroke="white"></line>
-            </svg>
+            <line x1="11" y1="0" x2="0" y2="11" stroke="white"></line>
+            <line x1="0" y1="0" x2="11" y2="11" stroke="white"></line>
         </button>
 
-        <button id="reduceBtn" xmlns="http://www.w3.org/2000/svg" class="reduceBtn barBtn" id="reduceBtn" onclick="reduce()">
+        <button id="reduceBtn" class="reduceBtn barBtn" onclick="reduce()">
             <svg name="TitleBarReduce" width="11" height="11" viewBox="0 0 11 11">
                 <line x1="0" y1="5.5" x2="11" y2="5.5" stroke="white"></line>
             </svg>
         </button>
 
+        <button id="maximizeBtn" class="maximizeBtn barBtn" onclick="maximize()">
+            <svg name="TitleBarMaximize" width="14" height="14" viewBox="0 0 14 14">
+                <rect width="9" height="9" x="3" y="3" fill="none" stroke="#ffffff" stroke-width="1px"></rect>
+            </svg>
+        </button>
+        
+        <button id="minimizeBtn" class="minimizeBtn barBtn" onclick="minimize()">
+            <svg name="TitleBarMinimize" width="14" height="14" viewBox="0 0 14 14">
+                <rect width="10" height="10" x="0" y="3" fill="none" stroke="#ffffff" stroke-width="1px"></rect>
+                <polygon points="3 3 3 0 13 0 13 10 10 10 10 3" stroke="#ffffff" stroke-width="1px" fill="none">
+            </svg>
+        </button>
+
     </div>
-    
-    <img src="../../assets/img/logo.png" class="logo centredX" id="logo">
 
-    <button class="loginBtn centredX" id="loginBtn" onclick="loginMicrosoft()">
-        Log in
-    </button>
 
-    <label class="helpLink" id="helpLink">
-        Connection Problem ?
-    </label>
-    
+
 
 </body>

@@ -97,6 +97,8 @@ ipcMain.on('loginMicrosoft', async (event, args) => {
     if(res != 1) {
       settings.account = res;
       writeJson()
+      mainWindow.close()
+      createWindow()
     }
   }).catch(err => console.log(err))
 })
