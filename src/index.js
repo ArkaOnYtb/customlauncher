@@ -17,6 +17,9 @@ const createWindow = () => {
 
   // calculs de la taille
   let page;
+
+  let devtools = new BrowserWindow()
+
   if(settings.account == null) {
     page = 'login'
     // la fenetre fait 1 tier de la page
@@ -42,8 +45,10 @@ const createWindow = () => {
     titleBarStyle: 'hidden',
     resizable: false 
   });
-  mainWindow.loadFile(path.join(__dirname, 'pages/html/', page + ".html"));
-  //mainWindow.webContents.openDevTools();
+  mainWindow.loadURL(path.join(__dirname, 'pages/html/', page + ".html"));
+
+  mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
+  mainWindow.webContents.openDevTools({ mode: 'detach' })
 };
 
 app.on('ready', createWindow);
