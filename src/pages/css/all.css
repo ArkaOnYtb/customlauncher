@@ -49,9 +49,7 @@ div.titleBar {
 div.titleBar label.title {
     color: white;
     font-size: 18px;
-    position: absolute;
-    top: 7px;
-    left: 7px;
+    padding: 7px;
 }
 
 button.barBtn {

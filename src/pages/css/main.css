@@ -8,15 +8,38 @@ body {
     
 }
 
-div.mainContent {
+div.playerZone {
+    padding: 3vw;
+    position: absolute;
+
+}
+
+div.playerInfo {
+
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+    width: 8vw;
+    height: 30vh;
+
+    padding: 2vw;
+}
+
+section.mainContent {
 
 }
 
 div.serverBox {
     margin: auto;
+    margin-top: 8vh;
+    
     width: 50vw;
     height: 50vh;
 }
+
+
+
 
 div.playPart {
     background-color: rgba(0, 0, 0, 0.5);
@@ -153,7 +176,7 @@ div.infoPart div.newsBox {
 
 }
 
-.title{
+div.box p.title{
     margin-top: 5%;
     color: white;
 }
