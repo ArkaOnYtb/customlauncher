@@ -7,6 +7,7 @@
     <script type="text/javascript">
 
         const { openBrowser } = require('../../scripts/utils.js')
+        const { load } = require('../../scripts/mainpage.js')
         const { ipcRenderer } = require('electron')
 
 
@@ -32,6 +33,9 @@
             document.getElementById('maximizeBtn').style.display = 'block'
         })
 
+        window.onload = load
+        
+
     </script>
 
     <!--font awesome icons-->
@@ -41,15 +45,17 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <div id="titleBar" class="titleBar">
 
-        <label id="title" class="title">Launcher</label>
+        <label id="title" class="title"> Test Launcher</label>
 
         <button id="closeBtn" class="closeBtn barBtn" onclick="closeWin()">
-            <line x1="11" y1="0" x2="0" y2="11" stroke="white"></line>
-            <line x1="0" y1="0" x2="11" y2="11" stroke="white"></line>
+            <svg name="TitleBarClose" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
+                <line x1="11" y1="0" x2="0" y2="11" stroke="white"></line>
+                <line x1="0" y1="0" x2="11" y2="11" stroke="white"></line>
+            </svg>
         </button>
 
         <button id="reduceBtn" class="reduceBtn barBtn" onclick="reduce()">
@@ -74,8 +80,61 @@
     </div>
 
 
-    <div id="allContenu">
+    <div id="allContent" class="allContent">
+        <aside id="playerZone">
+            <div id="playerInfo">
+                <img src="../../assets/img/MHF_Alex.png" width="30px">
+                <label id="playerName">Alex</label>
+            </div>
+            
+        </aside>
+
+        <section id="mainContent">
+            
+            <div class="serverBox">
+
+                <div id="playPart">
+                    
+                    <img id="logo" src="../../assets/img/logo.png" width="100px">
+                    
+                    <div id="buttonPlay">
+                        <img src="symbolePlay">
+                        <button id="play"></button>
+                    </div>
+
+                    <div id="infoServer">
+                        <div id="onlineZone">
+
+                        </div>
+                        <div id="onlineNb">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div>
+                
+                <div class="shopBox" id="shopBox">
+                    <label class="title">Shop</label>
+                </div>
+
+                <div class="newsBox" id="shopBox">
+                    <label class="title">News</label>
+
+                </div>
+
+            </div>
+
+            
+
+
+            <div>
+
+            </div>
+        </section>
         
+
     </div>
 
 

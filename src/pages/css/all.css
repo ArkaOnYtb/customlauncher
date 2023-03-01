@@ -37,7 +37,7 @@ div {
 }
 
 div.titleBar {
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     height: 30px;
