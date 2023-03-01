@@ -33,7 +33,7 @@
             document.getElementById('maximizeBtn').style.display = 'block'
         })
 
-        window.onload = load
+        document.onload = load
         
 
     </script>
@@ -45,7 +45,7 @@
 
 </head>
 
-<body id="body">
+<body>
 
     <div id="titleBar" class="titleBar">
 
@@ -89,39 +89,53 @@
             
         </aside>
 
-        <section id="mainContent">
+        <section id="mainContent" class="mainContent">
             
-            <div class="serverBox">
+            <div id="serverBox" class="serverBox">
 
-                <div id="playPart">
+                <div id="playPart" class="playPart">
                     
-                    <img id="logo" src="../../assets/img/logo.png" width="100px">
+                    <img id="logo" class="logo" src="../../assets/img/logo.png">
                     
-                    <div id="buttonPlay">
-                        <img src="symbolePlay">
-                        <button id="play"></button>
+                    <div id="buttonPlay" class="buttonPlay">
+                        <img src="../../assets/img/circled_play_96.png" width="64px">
+                        <button id="play">Play</button>
                     </div>
 
-                    <div id="infoServer">
-                        <div id="onlineZone">
+                    <div id="infoServer" class="infoServer">
+                        <div id="onlineStatut" class="onlineStatut">
+                            <div id="onlineText" class="onlineText">
+                                <label>Online</label>
+                                <img class="circle" src="../../assets/img/filled_circle_green.png" width="32px">
+                            </div>
 
+                            <div id="onlineNb" class="onlineNb">
+                                <label>12 / 100 players</label>
+                            </div>
                         </div>
-                        <div id="onlineNb">
 
+                        <div id="offlineStatut" class="offlineStatut">
+                            <label>Server Offline</label>
+                            <img class="circle" src="../../assets/img/filled_circle_red.png">
                         </div>
+
                     </div>
 
                 </div>
 
                 <div>
                 
-                <div class="shopBox" id="shopBox">
-                    <label class="title">Shop</label>
-                </div>
+                <div class="infoPart">
 
-                <div class="newsBox" id="shopBox">
-                    <label class="title">News</label>
+                    
+                    <div class="shopBox box" id="shopBox">
+                        <p class="title">Shop</p>
+                    </div>
 
+                    <div class="newsBox box" id="newsBox">
+                        <p class="title">News</p>
+
+                    </div>
                 </div>
 
             </div>

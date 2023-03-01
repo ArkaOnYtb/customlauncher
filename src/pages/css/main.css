@@ -4,5 +4,168 @@ body {
 }
 
 
+#allContent {
+    
+}
+
+div.mainContent {
+
+}
+
+div.serverBox {
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
+}
+
+div.playPart {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    text-align: center;
+
+
+}
+
+div.playPart img.logo {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 25%;
+
+
+}
+
+div.buttonPlay {
+    text-align: center;
+    margin: auto auto auto auto;
+    width: 30%;
+
+    border: 2px solid white ;
+    border-radius: 20px;
+
+}
+
+div.buttonPlay img {
+    margin-top: 0px;
+    width: 30%;
+    min-width: 32px;
+    vertical-align: middle;
+
+
+}
+
+div.buttonPlay button {
+    background: transparent;
+    border: none;
+
+    vertical-align: middle;
+
+    font-size: 3vw;
+    color: white;
+}
+
+div.infoServer {
+    margin: auto;
+    margin-top: 5%;
+}
+
+/*========================================*/
+/*Zone Statut serveur*/
+
+div.infoServer .circle {
+    width: 2vw;
+    vertical-align: middle;
+}
+
+/*Zone Statut Online*/
+
+div.infoServer div.onlineStatut {
+    
+}
+
+div.onlineStatut div.onlineText{
+    display: inline-block;
+    width: 40%;
+}
+
+div.onlineStatut div.onlineText label{
+    color: white;
+    font-size: 2.3vw;
+}
+
+div.onlineStatut div.onlineNb{
+    display: inline-block;
+    width: 40%;
+}
+
+div.onlineStatut div.onlineNb label{
+    color: white;
+    font-size: 2.3vw;
+}
+
+
+/*Zone Statut Offline*/
+div.infoServer div.offlineStatut {
+    width: 40%;
+    align-items: inline-block;
+    display: none;
+}
+
+div.offlineStatut label{
+    color: white;
+    font-size: 2.3vw;
+}
+
+
+/*========================================*/
+/*Zone Statut serveur*/
+
+
+div.serverBox div.infoPart {
+    margin-top: 5%;
+
+}
+
+div.infoPart div.box {
+    width: 40%;
+    height: 40%;
+
+    display: inline-block;
+
+    
+
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+div.infoPart div.shopBox {
+    margin-right: 9%;
+}
+
+
+div.infoPart div.newsBox {
+    margin-left: 9%;
+
+}
+
+.title{
+    margin-top: 5%;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
 
 
