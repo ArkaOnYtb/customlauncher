@@ -8,39 +8,82 @@ body {
     
 }
 
-div.playerZone {
-    padding: 3vw;
-    position: absolute;
 
+
+/* ============================== */
+/* Zone Player */
+
+div.playerZone {
+    padding: 1vw;
+    position: absolute;
 }
 
 div.playerInfo {
-
-
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 
-    width: 8vw;
-    height: 30vh;
-
     padding: 2vw;
+
 }
 
+/* Player Head */
+div.playerInfo div.playerHead {
+    text-align: center;
+}
+
+div.playerInfo div.playerHead img {
+
+    border-radius: 20px;
+    border: 2px solid white;
+    width: 4vw;
+}
+
+/* Player Name */
+div.playerInfo div.playerName {
+    color: white;
+    font-size: 1vw;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+
+div.playerInfo hr {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+/* Player Settings */
+div.playerInfo div.settingLauncher {
+    text-align: center;
+}
+
+div.playerInfo div.settingLauncher img {
+    cursor: pointer;
+    width: 4vw;
+}
+
+/* ============================*/
+/* Zone Main */
 section.mainContent {
 
 }
 
+/* Zone Mid */
 div.serverBox {
-    margin: auto;
-    margin-top: 8vh;
-    
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%);
+
+    margin-top: 11vh;
+
     width: 50vw;
     height: 50vh;
 }
 
 
 
-
+/* Zone Mid Top */
 div.playPart {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
