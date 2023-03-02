@@ -14,7 +14,8 @@ body {
 /* Zone Player */
 
 div.playerZone {
-    padding: 1vw;
+    margin-top: 5vh;
+    margin-left: 1vw;
     position: absolute;
 }
 
@@ -75,10 +76,9 @@ div.serverBox {
     left: 50%;
     transform: translate(-50%);
 
-    margin-top: 11vh;
+    width: 60vw;
 
-    width: 50vw;
-    height: 50vh;
+    margin-top: 5vh;
 }
 
 
@@ -93,41 +93,31 @@ div.playPart {
 
     margin: auto;
     text-align: center;
-
-
 }
 
 div.playPart img.logo {
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 25%;
-
-
+    width: 20vh;
 }
 
 div.buttonPlay {
     text-align: center;
-    margin: auto auto auto auto;
-    width: 30%;
-
-    border: 2px solid white ;
-    border-radius: 20px;
-
+    margin: 3vh auto 7vh auto;
+    width: 15vw;
+    cursor: pointer;
 }
 
 div.buttonPlay img {
     margin-top: 0px;
-    width: 30%;
     min-width: 32px;
+    width: 22%;
     vertical-align: middle;
-
-
 }
 
 div.buttonPlay button {
     background: transparent;
     border: none;
-
     vertical-align: middle;
 
     font-size: 3vw;
@@ -136,14 +126,15 @@ div.buttonPlay button {
 
 div.infoServer {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 5vh;
+    padding-bottom: 3vh;
 }
 
 /*========================================*/
 /*Zone Statut serveur*/
 
 div.infoServer .circle {
-    width: 2vw;
+    width: 1.5vw;
     vertical-align: middle;
 }
 
@@ -160,7 +151,7 @@ div.onlineStatut div.onlineText{
 
 div.onlineStatut div.onlineText label{
     color: white;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
 }
 
 div.onlineStatut div.onlineNb{
@@ -170,7 +161,7 @@ div.onlineStatut div.onlineNb{
 
 div.onlineStatut div.onlineNb label{
     color: white;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
 }
 
 
@@ -183,7 +174,7 @@ div.infoServer div.offlineStatut {
 
 div.offlineStatut label{
     color: white;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
 }
 
 
