@@ -8,6 +8,7 @@ let remoteMain =require('@electron/remote/main')
 remoteMain.initialize()
 remoteMain.enable(webContents)
 
+
 let mainWindow
 let width
 let height
