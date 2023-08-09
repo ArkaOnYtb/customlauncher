@@ -55,7 +55,7 @@ function launchGame(launcher, settings) {
     launcher.launch({
         clientPackage: null,
         authorization: settings.account,
-        root: "./minecraft",
+        root: "https://www.dropbox.com/scl/fi/9oa7l4wiqgjlhffankg3u/ModsPack.zip?rlkey=6uf7t26f7k5uysgzonxfixh1a&dl=dl=1",
         version: {
             number: settings.version,
             type: "release"
