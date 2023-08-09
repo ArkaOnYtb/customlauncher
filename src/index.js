@@ -1,8 +1,12 @@
-const { app, BrowserWindow, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, webContents } = require('electron');
 const path = require('path');
 const { loginMicrosoft } = require('./scripts/login.js')
 const fs = require('node:fs')
 let settings = require('./settings.json');
+
+let remoteMain =require('@electron/remote/main')
+remoteMain.initialize()
+remoteMain.enable(webContents)
 
 let mainWindow
 let width
@@ -11,6 +15,13 @@ let height
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
+
+const { setupTitlebar, attachTitlebarToWindow } = require("custom-electron-titlebar/main");
+
+// setup the titlebar main process
+setupTitlebar();
+
+
 
 const createWindow = () => {
   console.log(settings)
@@ -33,18 +44,23 @@ const createWindow = () => {
   height = Math.round(screen.getPrimaryDisplay().size.height * 3/4)
 
   mainWindow = new BrowserWindow({
+    title: "Launcher MC",
     width: width,
     height: height,
     title: settings.title,
     center: true,
+    frame: false,
+    titleBarStyle: 'hidden',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
+      enableRemoteModule: true
     },
     titleBarStyle: 'hidden',
     resizable: false 
   });
+  attachTitlebarToWindow(mainWindow);
   mainWindow.loadURL(path.join(__dirname, 'pages/html/', page + ".html"));
 
   mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
