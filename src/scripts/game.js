@@ -5,10 +5,12 @@ const launcher = new Client()
 // storage is a custom obj corresponding to the storage.json structure
 function launchGame(storage) {
 
+    let path = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share") + "/." + storage.title
+
     launcher.launch({
         clientPackage: null,
         authorization: storage.account,
-        root: "./minecraft",
+        root: "C:\Users\kangp\AppData\Roaming",
         version: {
             number: storage.game.version,
             type: storage.game.type
