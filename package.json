@@ -18,6 +18,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@electron/remote": "^2.0.10",
+    "custom-electron-titlebar": "^4.2.5",
     "electron-squirrel-startup": "^1.0.0",
     "minecraft-launcher-core": "^3.16.18",
     "msmc": "^3.1.4"

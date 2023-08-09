@@ -1,4 +1,5 @@
 let settings = require('../settings.json')
+const {Client, Authenticator} = require("minecraft-launcher-core")
 
 function load() {
 
@@ -7,6 +8,11 @@ function load() {
     let playerName = document.getElementById("playerName").innerHTML = settings.account.name
 
 }
+
+function play(){
+    Authenticator.getAuth()
+}
+
 
 module.exports = {
     load: load
