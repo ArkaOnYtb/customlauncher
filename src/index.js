@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen, webContents } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, screen, webContents } = require('electron');
 const path = require('path');
 const { loginMicrosoft } = require('./scripts/login.js')
 const fs = require('node:fs')
@@ -45,7 +45,6 @@ const createWindow = () => {
   height = Math.round(screen.getPrimaryDisplay().size.height * 3/4)
 
   mainWindow = new BrowserWindow({
-    title: "Launcher MC",
     width: width,
     height: height,
     title: settings.title,
@@ -58,14 +57,18 @@ const createWindow = () => {
       contextIsolation: false,
       enableRemoteModule: true
     },
-    titleBarStyle: 'hidden',
-    resizable: false 
   });
-  attachTitlebarToWindow(mainWindow);
+
+
   mainWindow.loadURL(path.join(__dirname, 'pages/html/', page + ".html"));
 
   mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
   mainWindow.webContents.openDevTools({ mode: 'detach' })
+
+  const menu = Menu.buildFromTemplate(exampleMenuTemplate);
+	Menu.setApplicationMenu(menu)
+
+  attachTitlebarToWindow(mainWindow);
 };
 
 app.on('ready', createWindow);
@@ -128,3 +131,122 @@ ipcMain.on('loginMicrosoft', async (event, args) => {
 module.exports = {
   emit: emit
 }
+
+// Custom menu
+const exampleMenuTemplate = [
+	{
+		label: 'Simple O&ptions',
+		submenu: [
+			{
+				label: 'Quit',
+				click: () => app.quit()
+			},
+			{
+				label: 'Radio1',
+				type: 'radio',
+				checked: true
+			},
+		]
+	},
+	{
+		label: 'A&dvanced Options',
+		submenu: [
+			{
+				label: 'Quit',
+				click: () => app.quit()
+			},
+			{
+				label: 'Radio1',
+				type: 'radio',
+				checked: true
+			},
+			{
+				label: 'Radio2',
+				type: 'radio'
+			},
+			{
+				label: 'Checkbox1',
+				type: 'checkbox',
+				checked: true,
+				click: (item) => {
+					console.log('item is checked? ' + item.checked)
+				}
+			},
+			{ type: 'separator' },
+			{
+				label: 'Checkbox2',
+				type: 'checkbox',
+				checked: false,
+				click: (item) => {
+					console.log('item is checked? ' + item.checked)
+				}
+			},
+			{
+				label: 'Radio Test',
+				submenu: [
+					{
+						label: 'S&ample Checkbox',
+						type: 'checkbox',
+						checked: true
+					},
+					{
+						label: 'Radio1',
+						checked: true,
+						type: 'radio'
+					},
+					{
+						label: 'Radio2',
+						type: 'radio'
+					},
+					{
+						label: 'Radio3',
+						type: 'radio'
+					},
+					{ type: 'separator' },
+					{
+						label: 'Radio1',
+						checked: true,
+						type: 'radio'
+					},
+					{
+						label: 'Radio2',
+						type: 'radio'
+					},
+					{
+						label: 'Radio3',
+						type: 'radio'
+					}
+				]
+			},
+			{
+				label: 'zoomIn',
+				role: 'zoomIn'
+			},
+			{
+				label: 'zoomOut',
+				role: 'zoomOut'
+			},
+			{
+				label: 'Radio1',
+				type: 'radio'
+			},
+			{
+				label: 'Radio2',
+				checked: true,
+				type: 'radio'
+			}
+		]
+	},
+	{
+		label: '&View',
+		submenu: [
+			{ role: 'reload' },
+			{ role: 'forceReload' },
+			{ type: 'separator' },
+			{ role: 'zoomIn' },
+			{ role: 'zoomOut' },
+			{ role: 'resetZoom' },
+			{ role: 'toggleDevTools' }
+		]
+	}
+]

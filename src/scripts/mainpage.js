@@ -1,6 +1,4 @@
 let settings = require('../settings.json')
-const {Client, Authenticator} = require("minecraft-launcher-core")
-
 function load() {
 
     let playerHead = document.getElementById("playerInfo")
@@ -10,7 +8,7 @@ function load() {
 }
 
 function play(){
-    Authenticator.getAuth()
+    
 }
 
 
