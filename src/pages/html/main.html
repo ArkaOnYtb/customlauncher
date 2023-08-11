@@ -17,11 +17,11 @@
 
         document.onload = load
 
-        function launchGame(){
+        function launchGame() {
             ipcRenderer.send('launchGame')
         }
 
-        
+
 
     </script>
 
@@ -54,23 +54,26 @@
         </div>
 
         <section id="mainContent" class="mainContent">
-            
+
             <div id="serverBox" class="serverBox">
 
                 <div id="playPart" class="playPart">
-                    
-                    <img id="logo" class="logo" src="../../assets/img/logo.png">
-                    
-                    <div id="buttonPlay" class="buttonPlay" onclick="launchGame()">
-                        <img src="../../assets/img/play_button_circled_98px.png" width="64px">
-                        <p id="play">Play</p>
-                    </div>
 
-                    <div id="barContent" class="barContent">
-                        <div id="loadBar" class="loadBar">
-                            <div id="barProgress" class="barProgress"> </div>
+                    <img id="logo" class="logo" src="../../assets/img/logo.png">
+
+                    <div>
+                        <!--<div id="buttonPlay" class="buttonPlay" onclick="launchGame()"> 
+                            <img src="../../assets/img/play_button_circled_98px.png" width="64px">
+                            <p id="play">Play</p>
+                        </div>-->
+
+                        <div id="barContent" class="barContent">
+                            <p>Chargement...</p>
+                            <div id="loadBar" class="loadBar">
+                                <div id="barProgress" class="barProgress"> </div>
+                            </div>
                         </div>
-                    </div> 
+                    </div>
 
 
                     <div id="infoServer" class="infoServer">
@@ -95,53 +98,61 @@
                 </div>
 
                 <div>
-                
-                <div class="infoPart">
 
-                    <div class="shopBox box" id="shopBox">
-                        <p class="title">Shop</p>
+                    <div class="infoPart">
+
+                        <div class="shopBox box" id="shopBox">
+                            <p class="title">Shop</p>
+                        </div>
+
+                        <div class="newsBox box" id="newsBox">
+                            <p class="title">News</p>
+
+                        </div>
                     </div>
 
-                    <div class="newsBox box" id="newsBox">
-                        <p class="title">News</p>
-
-                    </div>
                 </div>
 
-            </div>
+                <div>
 
-            <div>
-
-            </div>
+                </div>
         </section>
-        
+
     </div>
     <style>
         #barContent {
             width: 60%;
             margin: auto;
             text-align: center;
+            height: 110px;
+        }
+
+
+        #barContent p {
+            color: #ffffff;
         }
 
         #loadBar {
-          width: 100%;
-          text-align: center;
+            width: 100%;
+            text-align: center;
 
-          background-color: #ddd;
+            padding: 6px;
+            background: rgba(0, 0, 0, 0.40);
+            border-radius: 6px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
         }
-        
+
         #barProgress {
-          width: 10%;
-          height: 30px;
-          background-color: #04AA6D;
-          text-align: center;
-          line-height: 30px;
-          color: white;
-        }
+            width: 80%;
+            background-color: rgb(25, 177, 20);
+            background-image: linear-gradient(45deg, rgb(74, 218, 8) 25%, transparent 25%, transparent 50%,
+                    rgb(74, 218, 8) 50%, rgb(74, 218, 8) 75%, transparent 75%, transparent);
+            height: 15px;
 
+        }
     </style>
 
-    
+
 
 
     <script>
