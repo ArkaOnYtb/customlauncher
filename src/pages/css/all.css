@@ -10,7 +10,6 @@ body {
     margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    border: 1px solid #48545c;
 }
 
 div {
@@ -213,4 +212,8 @@ display: flex !important;
 
 .maximized #max-button {
 display: none;
+}
+
+.cet-title.cet-title-left {
+    margin-left: 0px;
 }
