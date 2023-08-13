@@ -21,6 +21,12 @@
             ipcRenderer.send('launchGame')
         }
 
+        ipcRenderer.on("loadPercentage", args => {
+            const barProgress = document.getElementById("barProgress")
+            barProgress.style.width = args.percentage;
+        })
+
+
 
 
     </script>
@@ -62,13 +68,13 @@
                     <img id="logo" class="logo" src="../../assets/img/logo.png">
 
                     <div>
-                        <!--<div id="buttonPlay" class="buttonPlay" onclick="launchGame()"> 
+                        <div id="buttonPlay" class="buttonPlay" onclick="launchGame()"> 
                             <img src="../../assets/img/play_button_circled_98px.png" width="64px">
                             <p id="play">Play</p>
-                        </div>-->
+                        </div>
 
                         <div id="barContent" class="barContent">
-                            <p>Chargement...</p>
+                            <p>Chargement... </p>
                             <div id="loadBar" class="loadBar">
                                 <div id="barProgress" class="barProgress"> </div>
                             </div>
@@ -119,6 +125,7 @@
         </section>
 
     </div>
+
     <style>
         #barContent {
             width: 60%;
@@ -143,7 +150,7 @@
         }
 
         #barProgress {
-            width: 80%;
+            width: 40%;
             background-color: rgb(25, 177, 20);
             background-image: linear-gradient(45deg, rgb(74, 218, 8) 25%, transparent 25%, transparent 50%,
                     rgb(74, 218, 8) 50%, rgb(74, 218, 8) 75%, transparent 75%, transparent);

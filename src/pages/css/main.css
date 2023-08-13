@@ -89,8 +89,6 @@ div.serverBox {
     margin-top: 5vh;
 }
 
-
-
 /* Zone Mid Top */
 div.playPart {
     background-color: rgba(0, 0, 0, 0.5);
@@ -149,14 +147,12 @@ div.infoServer {
 
 /*========================================*/
 /*Zone Statut serveur*/
-
 div.infoServer .circle {
     width: 1.5vw;
     vertical-align: middle;
 }
 
 /*Zone Statut Online*/
-
 div.infoServer div.onlineStatut {
     
 }

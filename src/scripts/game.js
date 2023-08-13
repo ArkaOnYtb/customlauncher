@@ -1,6 +1,7 @@
 const { Authenticator, Client } = require('minecraft-launcher-core')
 const { launch } = require('msmc')
 const launcher = new Client()
+const { emit } = require('../index')
 
 // function that runs the game
 // storage is a custom obj corresponding to the storage.json structure
@@ -42,6 +43,11 @@ launcher.on('progress', event => {
     let coef = 100 / event.total
     //console.log(Math.round(event.task * coef))
     //console.log(event)
+
+    let args = {task: event.type, percentage: Math.round(event.task * coef)}
+
+    emit("loadPercentage", args)
+
 })
 launcher.on('download-status', event => {
     //console.log(event)
