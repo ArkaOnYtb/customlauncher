@@ -7,29 +7,16 @@
 
     <script type="text/javascript">
 
-        require('../../renderer.js')
-
         const { openBrowser } = require('../../scripts/utils.js')
         const { ipcRenderer } = require('electron')
 
         // title bar buttons functions*
-        function closeWin() {ipcRenderer.invoke('close')}
-        function reduce() {ipcRenderer.invoke('reduce')}
+        function closeWin() { window.instanceAPI.sendCloseWin() }
+        function reduce() { window.instanceAPI.sendReduceWin() }
 
         function loginMicrosoft() {
-            ipcRenderer.send("loginMicrosoft")
+            window.instanceAPI.sendLoginUser();
         }
-
-        // change the resize button when the window size changes
-        ipcRenderer.on('maximized', () => {
-            document.getElementById('minimizeBtn').style.display = 'block'
-            document.getElementById('maximizeBtn').style.display = 'none'
-        })
-
-        ipcRenderer.on('minimized', () => {
-            document.getElementById('minimizeBtn').style.display = 'none'
-            document.getElementById('maximizeBtn').style.display = 'block'
-        })
 
         document.onload = () => {
             

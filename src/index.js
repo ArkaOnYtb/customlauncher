@@ -5,9 +5,9 @@ const { launchGame } = require('./scripts/game.js')
 const fs = require('node:fs')
 let settings = require('./settings.json');
 
-let remoteMain =require('@electron/remote/main')
+/*let remoteMain =require('@electron/remote/main')
 remoteMain.initialize()
-remoteMain.enable(webContents)
+remoteMain.enable(webContents)*/
 
 
 let mainWindow
@@ -25,9 +25,7 @@ setupTitlebar();
 
 
 
-	const createWindow = () => {
-	console.log(settings)
-	
+const createWindow = () => {	
 	// calculs de la taille
 	let page;
 
@@ -55,24 +53,36 @@ setupTitlebar();
 		webPreferences: {
 		preload: path.join(__dirname, 'preload.js'),
 		nodeIntegration: true,
-		contextIsolation: false,
+		contextIsolation: true,
 		enableRemoteModule: true
 		},
 	});
-
+	
 
 	mainWindow.loadURL(path.join(__dirname, 'pages/html/', page + ".html"));
 
 	mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
 	mainWindow.webContents.openDevTools({ mode: 'detach' })
 
-	Menu.setApplicationMenu(exampleMenuTemplate)
+	Menu.setApplicationMenu(null)
 
 	attachTitlebarToWindow(mainWindow);
-
 };
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+
+	createWindow()
+
+	ipcMain.handle('loadHeadIMG', () => {
+
+		console.log("activate")
+
+
+		let uuid = settings.account.uuid
+		return uuid
+	})
+}
+);
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -81,18 +91,23 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
+
 	if (BrowserWindow.getAllWindows().length === 0) {
 		createWindow();
 	}
 });
 
-function emit(name, args) {
+/*function emit(name, args) {
   	mainWindow.webContents.send(name, args)
-}
+}*/
 
 function writeJson() {
   	fs.writeFileSync('./src/settings.json', JSON.stringify(settings, null, 2), err => console.log(err))
 }
+
+
+/*Zone ipcMain*/
+
 
 ipcMain.handle('close', () => {
 	if(mainWindow.closable) {
@@ -106,20 +121,8 @@ ipcMain.handle('reduce', () => {
   	mainWindow.minimize()
 })
 
-ipcMain.handle('minimize', () => {
-  	mainWindow.unmaximize()
-})
-
-ipcMain.handle('maximize', () => {
-  	mainWindow.maximize()
-})
-
-ipcMain.on('dragged', (event) => {
-  	event.reply('dragged', mainWindow.isFullscreen())
-})
-
-ipcMain.on('loginMicrosoft', async (event, args) => {
-	let login = await loginMicrosoft().then(res => {
+ipcMain.handle('loginMicrosoft', async (event, args) => {
+	await loginMicrosoft().then(res => {
 		if(res != 1) {
 		settings.account = res;
 		writeJson()
@@ -129,12 +132,14 @@ ipcMain.on('loginMicrosoft', async (event, args) => {
 	}).catch(err => console.log(err))
 })
 
-ipcMain.on('launchGame', async (event, args) => {
+
+ipcMain.handle('launchGame', (event, args) => {
+	console.log("test")
 	launchGame(settings)
 })
 
 module.exports = {
-  	emit: emit
+  	//emit: emit
 }
 
 const exampleMenuTemplate = [

@@ -5,6 +5,19 @@
     <meta charset="utf-8">
     <title>Hello World!</title>
     <script type="text/javascript">
+        const headImg = document.getElementById('headImg')
+
+        const func = async () => {
+
+            console.log("HEAD")
+            let uuid = await window.instanceAPI.loadHeadIMG()
+            console.log(uuid)
+            let srcs = `https://mc-heads.net/avatar/${uuid}/100`
+
+            headImg.src = srcs;
+    
+        }
+        func()
 
 
         const { openBrowser } = require('../../scripts/utils.js')
@@ -12,19 +25,16 @@
         const { ipcRenderer } = require('electron')
 
         function loginMicrosoft() {
-            ipcRenderer.send('loginMicrosoft')
+            window.instanceAPI.sendLoginUser()
         }
 
         document.onload = load
 
         function launchGame() {
-            ipcRenderer.send('launchGame')
+            window.instanceAPI.sendPlayGame()
         }
 
-        ipcRenderer.on("loadPercentage", args => {
-            const barProgress = document.getElementById("barProgress")
-            barProgress.style.width = args.percentage;
-        })
+
 
 
 
@@ -45,7 +55,7 @@
         <div id="playerZone" class="playerZone">
             <div id="playerInfo" class="playerInfo">
                 <div class="playerHead">
-                    <img src="../../assets/img/MHF_Alex.png">
+                    <img id="headImg" src="../../assets/img/MHF_Alex.png">
                 </div>
 
                 <div id="playerName" class="playerName">Arka_on</div>
@@ -127,43 +137,7 @@
     </div>
 
     <style>
-        #barContent {
-            width: 60%;
-            margin: auto;
-            text-align: center;
-            height: 110px;
-        }
 
-
-        #barContent p {
-            color: #ffffff;
-        }
-
-        #loadBar {
-            width: 100%;
-            text-align: center;
-
-            padding: 6px;
-            background: rgba(0, 0, 0, 0.40);
-            border-radius: 6px;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
-        }
-
-        #barProgress {
-            width: 40%;
-            background-color: rgb(25, 177, 20);
-            background-image: linear-gradient(45deg, rgb(74, 218, 8) 25%, transparent 25%, transparent 50%,
-                    rgb(74, 218, 8) 50%, rgb(74, 218, 8) 75%, transparent 75%, transparent);
-            height: 15px;
-
-        }
     </style>
-
-
-
-
-    <script>
-        require('../../renderer.js')
-    </script>
 
 </body>

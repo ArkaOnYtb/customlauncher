@@ -95,7 +95,7 @@ div.playPart {
     border-radius: 20px;
 
     width: 100%;
-    height: 60%;
+    height: 50vh;
 
     margin: auto;
     text-align: center;
@@ -115,6 +115,7 @@ div.buttonPlay {
     width: 15vw;
     cursor: pointer;
     border-radius: 50px;
+    
     /*border: 3px solid white;*/
 }
 div.buttonPlay:hover{
@@ -139,7 +140,43 @@ div.buttonPlay p {
     color: white;
 }
 
+/*Loading BAR*/
+div.barContent {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    height: 110px;
+    display: none;
+}
+
+
+div.barContent p {
+    color: #ffffff;
+}
+
+div.loadBar {
+    width: 100%;
+    text-align: center;
+
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.40);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+div.barProgress {
+    width: 40%;
+    background-color: rgb(25, 177, 20);
+    background-image: linear-gradient(45deg, rgb(74, 218, 8) 25%, transparent 25%, transparent 50%,
+            rgb(74, 218, 8) 50%, rgb(74, 218, 8) 75%, transparent 75%, transparent);
+    height: 15px;
+
+}
+
+
+
 div.infoServer {
+    position: relative;
     margin: auto;
     margin-top: 5vh;
     padding-bottom: 3vh;

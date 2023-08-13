@@ -47,8 +47,8 @@ launcher.on('progress', event => {
     let args = {task: event.type, percentage: Math.round(event.task * coef)}
 
     emit("loadPercentage", args)
-
 })
+
 launcher.on('download-status', event => {
     //console.log(event)
 })
