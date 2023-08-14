@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Menu, screen, webContents } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, screen } = require('electron');
 const path = require('path');
 const { loginMicrosoft } = require('./scripts/login.js')
 const { launchGame } = require('./scripts/game.js')
@@ -63,8 +63,9 @@ const createWindow = () => {
 
 	mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
 	mainWindow.webContents.openDevTools({ mode: 'detach' })
-
-	Menu.setApplicationMenu(null)
+	
+	const menu = Menu.buildFromTemplate(exampleMenuTemplate)
+	Menu.setApplicationMenu(menu)
 
 	attachTitlebarToWindow(mainWindow);
 };
@@ -72,17 +73,17 @@ const createWindow = () => {
 app.on('ready', () => {
 
 	createWindow()
-
-	ipcMain.handle('loadHeadIMG', () => {
-
-		console.log("activate")
-
-
-		let uuid = settings.account.uuid
-		return uuid
-	})
 }
 );
+
+ipcMain.handle('headImg', () => {
+
+	console.log("activate")
+
+
+	let uuid = settings.account.uuid
+	return uuid
+})
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -155,6 +156,53 @@ const exampleMenuTemplate = [
 				type: 'radio',
 				checked: true
 			},
+			{
+				label: 'Radio2',
+				type: 'radio'
+			},
+			{
+				label: 'Check&box1',
+				type: 'checkbox',
+				checked: true,
+				click: (item) => {
+					console.log('item is checked? ' + item.checked)
+				}
+			},
+			{ type: 'separator' },
+			{
+				label: 'Che&ckbox2',
+				type: 'checkbox',
+				checked: false,
+				click: (item) => {
+					console.log('item is checked? ' + item.checked)
+				}
+			}
+		]
+	},
+	{
+		label: 'With &Icons',
+		submenu: [
+			{
+				label: 'Go to &Home using Native Image'
+			},
+			{
+				label: 'Run using string',
+				submenu: [
+					{
+						label: 'Submenu of run'
+					},
+					{
+						label: 'Print',
+						accelerator: 'CmdOrCtrl+P'
+					},
+					{
+						type: 'separator'
+					},
+					{
+						label: 'Item 2 of submenu of run'
+					}
+				]
+			}
 		]
 	},
 	{
@@ -259,4 +307,3 @@ const exampleMenuTemplate = [
 		]
 	}
 ]
-
