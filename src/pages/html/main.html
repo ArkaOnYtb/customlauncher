@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <title>Hello World!</title>
     <script type="text/javascript">
-        const headImg = document.getElementById('headImg')
-
         const func = async () => {
-
+            
             console.log("HEAD")
             let uuid = await window.instanceAPI.loadHeadIMG()
             console.log(uuid)
-            let srcs = `https://mc-heads.net/avatar/${uuid}/100`
+ 
+            var img = document.createElement("IMG");
+            img.src = `https://mc-heads.net/avatar/${uuid}/100`;
 
-            headImg.src = srcs;
-    
+            var oldImg = document.getElementById('headImg');
+            document.getElementById('headImg').replaceChild(img, oldImg);
         }
+
         func()
 
 
@@ -33,11 +34,6 @@
         function launchGame() {
             window.instanceAPI.sendPlayGame()
         }
-
-
-
-
-
 
     </script>
 
