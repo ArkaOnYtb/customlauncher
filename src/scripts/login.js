@@ -23,9 +23,7 @@ async function loginMicrosoft() {
         }).catch(reason => {
             resolve(1)
         })
-
     })
-
 }
 
 // the function try to auth with the parameters

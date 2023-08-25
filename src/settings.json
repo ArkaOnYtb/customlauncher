@@ -1,8 +1,8 @@
 {
   "title": "Test Launcher",
   "account": {
-    "access_token": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MTk1NDAwMiwiZXhwIjoxNjkyMDQwNDAyLCJpYXQiOjE2OTE5NTQwMDJ9._MYyHtLXinA4WIe98YksMTP-8O8irGUJxjdtvzdSzEU",
-    "client_token": "50129c-d898d1-9b8d98-6aa1b8-4e4c53",
+    "access_token": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzAwMjM3MiwiZXhwIjoxNjkzMDg4NzcyLCJpYXQiOjE2OTMwMDIzNzJ9.dExQoTbqG0qPCtQwjuA3K_tpo54zH498npw7Ty5jc2g",
+    "client_token": "927253-8cf2b8-3ee43d-1088571-26cfc3",
     "uuid": "0c2a6a00608a49eca7af3861cf805681",
     "name": "Karsog",
     "meta": {
@@ -10,10 +10,10 @@
       "type": "msa"
     },
     "_msmc": {
-      "refresh": "M.C105_BL2.-CbDc6T9fkKd1RcQ9EheYjGiqsu2HmbxcGuFlcxuQpkO6HGTpCvs7OMQCLNjTmOP19IBO83aXMeORNDKa!zhRYXj2y4mMpnv8wotafvIukZt3pcFwElsSj5bLM1E1EhYxpKFwn!WwTeVHM*mYBNTszgaz6abtHUIvKUovKRdmK6wK*eKhFi8MAqKBFfkcIPmfySiWNXKjjc9ekRYLJeNccwduhQlr0u3MHoXg5p5S6*iuqvzijnwGy9BpHKuKpky6LjMmZB7LD1JTNXvNCqY3ZdZIOaK7i8!4QSLkPp!RMbcgTdNPMIXSYmVx4Zw9oSy1zQ$$",
-      "expires_by": 1692040302,
-      "ms_exp": 1691957500,
-      "mcToken": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MTk1NDAwMiwiZXhwIjoxNjkyMDQwNDAyLCJpYXQiOjE2OTE5NTQwMDJ9._MYyHtLXinA4WIe98YksMTP-8O8irGUJxjdtvzdSzEU"
+      "refresh": "M.C105_BL2.-CUChq3M8qanEhxj*wITnkvtE3t15Du9eYndp9v7PP8WHB9nLUqmCet51tjjM8FuNbiOfrQCOf1Ju7yDRWoKnbid0bsVRlwBCgaM2vjTxrd2HhRsd7nV5XgUAKGudcaBNbx0RSdD6LvD!B7pajyyBitwvwOr3SX2hmEw50622mybu3BU*hJ*QeJ!h5FeDW2KFxWG6Dw5Nw5!kbNJKF3IBCpaMQJq1PIU!P9GjUJmuqjmdWKfG2kR0fUPmHVNXazwiITQmywyBAp*YZJbDdBGjJSJr00n9Bgm7pW4!2qD9oOKj0SRwiTD6qZ!51beXYpVP*A$$",
+      "expires_by": 1693088672,
+      "ms_exp": 1693005870,
+      "mcToken": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzAwMjM3MiwiZXhwIjoxNjkzMDg4NzcyLCJpYXQiOjE2OTMwMDIzNzJ9.dExQoTbqG0qPCtQwjuA3K_tpo54zH498npw7Ty5jc2g"
     },
     "user_properties": "{}"
   },

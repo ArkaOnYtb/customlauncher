@@ -6,7 +6,7 @@
     <title>Hello World!</title>
     <script type="text/javascript">
 
-        
+        console.log("Super valeur: OFF")
 
         const func = async () => {
             
@@ -15,13 +15,23 @@
  
             var headImg = document.getElementById('headImg');
             headImg.src = `https://mc-heads.net/avatar/${uuid}/100`;
-
         }
+
+        window.instanceAPI.onLoadingStatus((event, value) => {
+            let barProgress = document.getElementById('barProgress')
+
+            barProgress.style.width = value.percentage+"%";
+            console.log("Super valeur: " + value.percentage)
+        })
         
         setTimeout(()=> {
             func()
         }, 550)  
 
+
+        function disableTest() {
+            
+        } 
 
         const { openBrowser } = require('../../scripts/utils.js')
         const { load } = require('../../scripts/mainpage.js')
@@ -61,7 +71,7 @@
                 <hr />
 
                 <div class="settingLauncher">
-                    <img src="../../assets/img/settings_98px.png">
+                    <img onclick="" src="../../assets/img/settings_98px.png">
                 </div>
 
             </div>
@@ -76,7 +86,7 @@
                     <img id="logo" class="logo" src="../../assets/img/logo.png">
 
                     <div>
-                        <div id="buttonPlay" class="buttonPlay" onclick="func()"> 
+                        <div id="buttonPlay" class="buttonPlay" onclick="launchGame()"> 
                             <img src="../../assets/img/play_button_circled_98px.png" width="64px">
                             <p id="play">Play</p>
                         </div>

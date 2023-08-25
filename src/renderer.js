@@ -1,7 +1,9 @@
-const barProgress = document.getElementById('barProgress')
 
-window.instanceAPI.onLoadingStatus((_event, value) => {
+window.instanceAPI.onLoadingStatus((event, value) => {
+  const barProgress = document.getElementById('barProgress')
+
   barProgress.style.width = value;
+  console.log("Super valeur: " + value)
 })
 
 const func = async () => {

@@ -42,7 +42,7 @@ contextBridge.exposeInMainWorld('instanceAPI', {
   sendLoginUser: () => ipcRenderer.invoke('loginMicrosoft'),
   sendPlayGame: () => ipcRenderer.invoke('launchGame'),
 
-  onLoadingStatus: (callback) => ipcRenderer.on('loadPercentage', callback)
+  onLoadingStatus: (callback) => ipcRenderer.on('loadPercentage', (callback))
 
 
   // we can also expose variables, not just functions

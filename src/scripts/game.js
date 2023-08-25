@@ -1,8 +1,7 @@
 const { Authenticator, Client } = require('minecraft-launcher-core')
 const { launch } = require('msmc')
 const launcher = new Client()
-const { emit } = require('../index')
-
+const { BrowserWindow } = require("electron")
 // function that runs the game
 // storage is a custom obj corresponding to the storage.json structure
 function launchGame(storage) {
@@ -24,7 +23,7 @@ function launchGame(storage) {
 }
 
 launcher.on('debug', (e) =>{
-    
+    console.log(e)
 });
 
 launcher.on('data', (data) => {
@@ -42,11 +41,11 @@ launcher.on('close', (e) => {
 launcher.on('progress', event => {
     let coef = 100 / event.total
     //console.log(Math.round(event.task * coef))
-    //console.log(event)
+    console.log(event)
 
     let args = {task: event.type, percentage: Math.round(event.task * coef)}
+    BrowserWindow.getFocusedWindow().webContents.send("loadPercentage", args)
 
-    emit("loadPercentage", args)
 })
 
 launcher.on('download-status', event => {

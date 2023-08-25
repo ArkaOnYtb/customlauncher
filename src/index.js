@@ -51,21 +51,27 @@ const createWindow = () => {
 		frame: false,
 		titleBarStyle: 'hidden',
 		webPreferences: {
-		preload: path.join(__dirname, 'preload.js'),
-		nodeIntegration: true,
-		contextIsolation: true,
-		enableRemoteModule: true
+			preload: path.join(__dirname, 'preload.js'),
+			nodeIntegration: true,
+			contextIsolation: true,
+			enableRemoteModule: true
 		},
 	});
 	
-
+	
 	mainWindow.loadURL(path.join(__dirname, 'pages/html/', page + ".html"));
 
+	
 	mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
 	mainWindow.webContents.openDevTools({ mode: 'detach' })
 	
 	const menu = Menu.buildFromTemplate(exampleMenuTemplate)
 	Menu.setApplicationMenu(menu)
+	const nuimberss = 1;
+	setTimeout(()=> {
+		mainWindow.webContents.send("loadPercentage", nuimberss)
+		console.log("webContent OK")
+	}, 3550)  
 
 	attachTitlebarToWindow(mainWindow);
 };
@@ -140,7 +146,7 @@ ipcMain.handle('launchGame', (event, args) => {
 })
 
 module.exports = {
-  	//emit: emit
+	mainWindow: mainWindow
 }
 
 const exampleMenuTemplate = [
@@ -149,7 +155,8 @@ const exampleMenuTemplate = [
 		submenu: [
 			{
 				label: 'Quit',
-				click: () => app.quit()
+				click: () => mainWindow.webContents.send("loadPercentage", 5)
+
 			},
 			{
 				label: 'Radio1',

@@ -108,6 +108,7 @@ div.playPart img.logo {
 }
 
 div.buttonPlay {
+    display: none;
     background-color: rgb(26, 214, 29);
     text-align: center;
     padding: 5px;
@@ -146,7 +147,6 @@ div.barContent {
     margin: auto;
     text-align: center;
     height: 110px;
-    display: none;
 }
 
 
