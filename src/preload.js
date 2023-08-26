@@ -30,11 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 contextBridge.exposeInMainWorld('instanceAPI', {
 
-
-  setTitle: (title) => ipcRenderer.send('set-title', title),
-
-  loadHeadIMG: () => ipcRenderer.invoke('headImg'),
-
+  sendUserUuid: () => ipcRenderer.invoke('userUuid'),
+  sendUserName: () => ipcRenderer.invoke('userName'),
 
   sendCloseWin: () => ipcRenderer.invoke('close'),
   sendReduceWin: () => ipcRenderer.invoke('reduce'),

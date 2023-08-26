@@ -1,8 +1,8 @@
 {
   "title": "Test Launcher",
   "account": {
-    "access_token": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzAwMjM3MiwiZXhwIjoxNjkzMDg4NzcyLCJpYXQiOjE2OTMwMDIzNzJ9.dExQoTbqG0qPCtQwjuA3K_tpo54zH498npw7Ty5jc2g",
-    "client_token": "927253-8cf2b8-3ee43d-1088571-26cfc3",
+    "access_token": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzA4Njk2MCwiZXhwIjoxNjkzMTczMzYwLCJpYXQiOjE2OTMwODY5NjB9.YAkLsC9JXQYtKRcUZDs2XuZFNvE10SGsbcqzPNh5Jxs",
+    "client_token": "15eaeb-31e04b-868266-4d34e2-16ca24",
     "uuid": "0c2a6a00608a49eca7af3861cf805681",
     "name": "Karsog",
     "meta": {
@@ -10,16 +10,12 @@
       "type": "msa"
     },
     "_msmc": {
-      "refresh": "M.C105_BL2.-CUChq3M8qanEhxj*wITnkvtE3t15Du9eYndp9v7PP8WHB9nLUqmCet51tjjM8FuNbiOfrQCOf1Ju7yDRWoKnbid0bsVRlwBCgaM2vjTxrd2HhRsd7nV5XgUAKGudcaBNbx0RSdD6LvD!B7pajyyBitwvwOr3SX2hmEw50622mybu3BU*hJ*QeJ!h5FeDW2KFxWG6Dw5Nw5!kbNJKF3IBCpaMQJq1PIU!P9GjUJmuqjmdWKfG2kR0fUPmHVNXazwiITQmywyBAp*YZJbDdBGjJSJr00n9Bgm7pW4!2qD9oOKj0SRwiTD6qZ!51beXYpVP*A$$",
-      "expires_by": 1693088672,
-      "ms_exp": 1693005870,
-      "mcToken": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzAwMjM3MiwiZXhwIjoxNjkzMDg4NzcyLCJpYXQiOjE2OTMwMDIzNzJ9.dExQoTbqG0qPCtQwjuA3K_tpo54zH498npw7Ty5jc2g"
+      "refresh": "M.C105_BL2.-CSVRyJund2*UCl3eBa9Sz50k*oG2WndGIXUstVJ*aPXP5j1hb*SWwJ19tihFKyjBivOSTjt4R5ngRi*EyX4bSDK0K8TrQ6FHh8fZBcDtljdLJDwaGqAg!dq2*ETV2A9RhrkzqdHbMR2GYJGJJti1NWDZvkFmlPTEeoDPMEnXaQ0nBgHgsAA5XFnCCkixL5y2eqORBOKMeXE9GyN2Db5XkU1nGSiiPB5*yMeyId1QJ1zHQ11bLVRcRZ8brf0yQnA2gLLeTJHY0As3MEbTg5xqg1Bj0GfVfb6joolmEts0UzFSDmf4RRCwNq5ChLXXGJGSkw$$",
+      "expires_by": 1693173260,
+      "ms_exp": 1693090458,
+      "mcToken": "eyJraWQiOiJhYzg0YSIsImFsZyI6IkhTMjU2In0.eyJ4dWlkIjoiMjUzNTQyNTU1NzAwNTk4NSIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRkZjQwNjktZWZhMC00ZmU2LWJmYWYtZDI3MjgwN2Y5MjMxIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsidHdvZmFjdG9yYXV0aCIsIm9yZGVyc18yMDIyIl0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInl1aWQiOiI3YjdhYWNjOWE1ZWViODVhMzgxYjVkNTA0ZmE0MjA5YSIsIm5iZiI6MTY5MzA4Njk2MCwiZXhwIjoxNjkzMTczMzYwLCJpYXQiOjE2OTMwODY5NjB9.YAkLsC9JXQYtKRcUZDs2XuZFNvE10SGsbcqzPNh5Jxs"
     },
     "user_properties": "{}"
-  },
-  "game": {
-    "version": "1.16.5",
-    "type": "release"
   },
   "ram": {
     "min": "2G",

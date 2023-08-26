@@ -4,17 +4,25 @@
 
     <meta charset="utf-8">
     <title>Hello World!</title>
+    <script type="text/javascript" src="../script/main.js"></script>
     <script type="text/javascript">
 
+        
         console.log("Super valeur: OFF")
 
         const func = async () => {
             
-            let uuid = await window.instanceAPI.loadHeadIMG()
+            let uuid =  await window.instanceAPI.sendUserUuid()
             console.log(uuid)
  
             var headImg = document.getElementById('headImg');
             headImg.src = `https://mc-heads.net/avatar/${uuid}/100`;
+            
+
+            let name = await window.instanceAPI.sendUserName()
+            let textName = document.getElementById("playerName")
+            textName.innerHTML = name
+
         }
 
         window.instanceAPI.onLoadingStatus((event, value) => {
@@ -33,15 +41,12 @@
             
         } 
 
-        const { openBrowser } = require('../../scripts/utils.js')
-        const { load } = require('../../scripts/mainpage.js')
-        const { ipcRenderer } = require('electron')
 
         function loginMicrosoft() {
             window.instanceAPI.sendLoginUser()
         }
 
-        document.onload = load
+
 
         function launchGame() {
             window.instanceAPI.sendPlayGame()
@@ -80,7 +85,7 @@
                     <img id="headImg" src="../../assets/img/MHF_Alex.png">
                 </div>
 
-                <div id="playerName" class="playerName">Arka_on</div>
+                <div id="playerName" class="playerName"></div>
 
                 <hr />
 

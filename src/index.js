@@ -5,11 +5,6 @@ const { launchGame } = require('./scripts/game.js')
 const fs = require('node:fs')
 let settings = require('./settings.json');
 
-/*let remoteMain =require('@electron/remote/main')
-remoteMain.initialize()
-remoteMain.enable(webContents)*/
-
-
 let mainWindow
 let width
 let height
@@ -82,13 +77,23 @@ app.on('ready', () => {
 }
 );
 
-ipcMain.handle('headImg', () => {
+ipcMain.handle('userUuid', () => {
 
 	console.log("activate")
 
 
 	let uuid = settings.account.uuid
 	return uuid
+})
+
+
+ipcMain.handle('userName', () => {
+
+	console.log("activate")
+
+
+	let name = settings.account.name
+	return name
 })
 
 app.on('window-all-closed', () => {
