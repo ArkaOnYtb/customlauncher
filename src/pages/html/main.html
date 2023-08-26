@@ -45,7 +45,21 @@
 
         function launchGame() {
             window.instanceAPI.sendPlayGame()
+            displayNone("buttonPlay")
+            displayBlock("barContent")
         }
+        
+        function displayNone(idElement){
+            let element = document.getElementById(idElement);
+            element.style.display = "none";
+        }
+
+        function displayBlock(idElement){
+            let element = document.getElementById(idElement);
+            element.style.display = "block";
+        }
+
+
 
     </script>
 
@@ -85,7 +99,7 @@
 
                     <img id="logo" class="logo" src="../../assets/img/logo.png">
 
-                    <div>
+                    <div id="midPart" class="midPart">
                         <div id="buttonPlay" class="buttonPlay" onclick="launchGame()"> 
                             <img src="../../assets/img/play_button_circled_98px.png" width="64px">
                             <p id="play">Play</p>
