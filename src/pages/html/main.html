@@ -8,45 +8,31 @@
     <script type="text/javascript">
 
         
-        console.log("Super valeur: OFF")
-
-        const func = async () => {
-            
-            let uuid =  await window.instanceAPI.sendUserUuid()
-            console.log(uuid)
- 
-            var headImg = document.getElementById('headImg');
+        //Attention await obligatoire (1h de avant de trouver le BUG)
+        const loadingPage = async () => {
+            //Loading Profile User: IMG + Name
+            let uuid = await window.instanceAPI.sendUserUuid()
+            let headImg = document.getElementById('headImg');
             headImg.src = `https://mc-heads.net/avatar/${uuid}/100`;
             
-
             let name = await window.instanceAPI.sendUserName()
             let textName = document.getElementById("playerName")
             textName.innerHTML = name
-
         }
 
         window.instanceAPI.onLoadingStatus((event, value) => {
             let barProgress = document.getElementById('barProgress')
 
             barProgress.style.width = value.percentage+"%";
-            console.log("Super valeur: " + value.percentage)
         })
         
         setTimeout(()=> {
-            func()
+            loadingPage()
         }, 550)  
-
-
-        function disableTest() {
-            
-        } 
-
 
         function loginMicrosoft() {
             window.instanceAPI.sendLoginUser()
         }
-
-
 
         function launchGame() {
             window.instanceAPI.sendPlayGame()
@@ -63,8 +49,6 @@
             let element = document.getElementById(idElement);
             element.style.display = "block";
         }
-
-
 
     </script>
 

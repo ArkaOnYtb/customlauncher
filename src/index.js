@@ -18,8 +18,6 @@ const { setupTitlebar, attachTitlebarToWindow } = require("custom-electron-title
 // setup the titlebar main process
 setupTitlebar();
 
-
-
 const createWindow = () => {	
 	// calculs de la taille
 	let page;
@@ -62,11 +60,6 @@ const createWindow = () => {
 	
 	const menu = Menu.buildFromTemplate(exampleMenuTemplate)
 	Menu.setApplicationMenu(menu)
-	const nuimberss = 1;
-	setTimeout(()=> {
-		mainWindow.webContents.send("loadPercentage", nuimberss)
-		console.log("webContent OK")
-	}, 3550)  
 
 	attachTitlebarToWindow(mainWindow);
 };
@@ -76,25 +69,6 @@ app.on('ready', () => {
 	createWindow()
 }
 );
-
-ipcMain.handle('userUuid', () => {
-
-	console.log("activate")
-
-
-	let uuid = settings.account.uuid
-	return uuid
-})
-
-
-ipcMain.handle('userName', () => {
-
-	console.log("activate")
-
-
-	let name = settings.account.name
-	return name
-})
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -120,6 +94,16 @@ function writeJson() {
 
 /*Zone ipcMain*/
 
+ipcMain.handle('userUuid', () => {
+	let uuid = settings.account.uuid
+	return uuid
+})
+
+
+ipcMain.handle('userName', () => {
+	let name = settings.account.name
+	return name
+})
 
 ipcMain.handle('close', () => {
 	if(mainWindow.closable) {
@@ -146,7 +130,6 @@ ipcMain.handle('loginMicrosoft', async (event, args) => {
 
 
 ipcMain.handle('launchGame', (event, args) => {
-	console.log("test")
 	launchGame(settings)
 })
 
@@ -160,7 +143,6 @@ const exampleMenuTemplate = [
 		submenu: [
 			{
 				label: 'Quit',
-				click: () => mainWindow.webContents.send("loadPercentage", 5)
 
 			},
 			{

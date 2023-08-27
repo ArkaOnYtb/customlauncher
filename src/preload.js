@@ -26,8 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
 contextBridge.exposeInMainWorld('instanceAPI', {
 
   sendUserUuid: () => ipcRenderer.invoke('userUuid'),
