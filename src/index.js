@@ -120,10 +120,10 @@ ipcMain.handle('reduce', () => {
 ipcMain.handle('loginMicrosoft', async (event, args) => {
 	await loginMicrosoft().then(res => {
 		if(res != 1) {
-		settings.account = res;
-		writeJson()
-		mainWindow.close()
-		createWindow()
+			settings.account = res.mclc();
+			writeJson()
+			mainWindow.close()
+			createWindow()
 		}
 	}).catch(err => console.log(err))
 })

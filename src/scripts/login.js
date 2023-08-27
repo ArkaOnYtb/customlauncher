@@ -1,4 +1,5 @@
-const msmc = require('msmc')
+//const msmc = require('msmc')
+const { Auth } = require('msmc')
 const { Authenticator, Client } = require('minecraft-launcher-core')
 const { ipcMain } = require('electron')
 
@@ -9,7 +10,7 @@ async function loginMicrosoft() {
 
     return new Promise(resolve => {
 
-        // open the window
+        /*// open the window
         msmc.fastLaunch("electron", (update) => {
             console.log(update)
         }).then(result => {
@@ -22,7 +23,25 @@ async function loginMicrosoft() {
             }
         }).catch(reason => {
             resolve(1)
+        })*/
+
+
+        const authManager = new Auth("select_account");
+
+        //Launch using the 'raw' gui framework (can be 'electron' or 'nwjs')
+        const xboxManager = authManager.launch("electron")
+        xboxManager.then(result => {
+            //result is a objet class Xbox
+            async function getInfoMcUser(){
+                let infoMcUser = await result.getMinecraft()
+                resolve(infoMcUser)
+            }
+            getInfoMcUser()
+
+        }).catch(reason => {
+            resolve(1)
         })
+    
     })
 }
 

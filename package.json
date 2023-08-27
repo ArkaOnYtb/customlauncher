@@ -19,7 +19,7 @@
     "custom-electron-titlebar": "^4.2.5",
     "electron-squirrel-startup": "^1.0.0",
     "minecraft-launcher-core": "^3.17.2",
-    "msmc": "3.1.4"
+    "msmc": "^4.1.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
