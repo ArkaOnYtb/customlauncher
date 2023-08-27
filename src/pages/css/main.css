@@ -274,8 +274,62 @@ div.box p.title{
 
 
 /*===========================================*/
-/*Popup Paramètre*/
+/*              Popup Paramètre              */
 /*===========================================*/
+
+div.settingPopUp {
+    display: none;
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 75%;
+    height: 80%;
+    background-color: gray;
+}
+
+div.headerSetting {
+  height: 50px;
+}
+
+div.headerSetting div.close {
+/*    margin-left: 100%;
+    transform: translate(-100%);
+*/
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+
+    vertical-align: top;
+}
+
+div.headerSetting div.titleZone {
+    display: inline-block;
+
+    vertical-align: middle;
+    
+    
+}
+
+div.headerSetting div.titleZone img {
+    display: inline-block;
+    align-self: center;
+    vertical-align: middle;
+    
+}
+
+div.headerSetting div.titleZone p {
+    display: inline-block;
+    margin: 0px;
+    vertical-align: middle;
+}   
+
+
+
+
 
 
 
